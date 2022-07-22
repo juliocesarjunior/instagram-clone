@@ -1,5 +1,12 @@
-<%#= "#{@posts.size.to_s} active post found." %>
-<%= @posts.inspect %>
-<% @posts.each do |post| %>
-	<%= image_tag post.image.url, class: "img img-fluid" %>
-<% end -%>
+<%#= @posts.inspect %>
+
+<div class="container">
+	<div class="row">
+		<div class="col-8">
+			<% @posts.each do |post| %>
+			<div class="bg-muted p-2"><%= post.admin.username %></div>
+			<%= image_tag post.image.url, class: "img img-fluid" %>
+			<% end -%>			
+		</div>
+	</div>
+</div>

@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   # POST /posts or /posts.json
   def create
     @post = Post.new(post_params)
-    @post.active = true
+    @post.admin_id = current_admin.id if admin_signed_in?
 
       if @post.save
         redirect_to dashboard_path, flash: { success: "Publicado com Sucesso"} 
