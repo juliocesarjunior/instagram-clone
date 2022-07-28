@@ -1,0 +1,14 @@
+<div class="container">
+	<div class="row">
+		<div class="col-4">
+			
+		</div>
+		<div class="col-8 text-left">
+			<h1><%= @admin.full_name %></h1>
+			<%= link_to "Editar Perfil",edit_admin_registration_path, class: "btn btn-secondary" %>
+			<div class="profile-stats"><%= @admin.posts.count %> publicações</div>
+			<div class="profile-stats"><%= @admin.total_followers%> seguidores</div>
+			<div class="profile-stats"><%= @admin.total_following %> seguindo</div>
+		</div>
+	</div>
+</div>
